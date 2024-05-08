@@ -1,0 +1,70 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.reg .inp input {
+  margin-top: 20px;
+  padding: 0 16px;
+  height: 34px;
+  display: block;
+  width: 250px;
+  border: none;
+  border: 1px solid #eee;
+  outline-color: #000;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  background-color: #f3f3f3;
+  text-align: end;
+}
+
+.reg .inp .showPass {
+  border: none;
+  background-color: transparent;
+  font-size: 14px;
+  color: #000;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  margin-left: 8px;
+  margin-top: -40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.reg .buttin {
+  height: 30px;
+  width: 100%;
+  color: #fff;
+  background-color: #8a8a8a;
+  border: none;
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.reg .buttin:active {
+  background-color: #383737;
+}
+.reg .log {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.reg .log button {
+  height: 30px;
+  width: 100px;
+  color: #fff;
+  background-color: #8a8a8a;
+  border: none;
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}

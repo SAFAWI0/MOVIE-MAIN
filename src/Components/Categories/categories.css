@@ -1,0 +1,39 @@
+.categories .grid-image {
+  margin-top: 10px;
+  margin-bottom: 70px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.categories .grid-image img {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.categories .grid-image p {
+  position: absolute;
+  margin-top: -30px;
+  margin-left: 130px;
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 5px 1px 4px rgba(0, 0, 0, 0.8);
+  text-align: end;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100px;
+}
+.categories .grid-image img:hover {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
+}
+.categories .grid-image img {
+  transition: transform 0.3s;
+}
+
+.categories .grid-image img:hover {
+  transform: scale(1.06);
+}

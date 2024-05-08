@@ -1,0 +1,27 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+  padding: 10px;
+  background-color: #000;
+}
+.icon {
+  color: #b1adad;
+  font-size: 32px;
+  cursor: pointer;
+}
+.icon:hover {
+  color: #fff;
+}
+.icon:active {
+  color: #7a7575;
+}
+.content-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
