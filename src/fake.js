@@ -10,6 +10,15 @@ import imag9 from "./Assets/99.jpg";
 import imag10 from "./Assets/10.jpg";
 import imag111 from "./Assets/111.jpg";
 import imag112 from "./Assets/112.jpg";
+
+import imaga from "./Assets/r.jpg";
+import imagt from "./Assets/t.jpg";
+import imagc from "./Assets/c.jpg";
+import imagz from "./Assets/z.jpg";
+import imagf from "./Assets/f.jpg";
+import imago from "./Assets/q.jpg";
+
+
 export const products = [
   {
     id: 1,
@@ -70,5 +79,34 @@ export const products = [
     id: 12,
     name: "  رياضي",
     image: imag112 ,
+  },
+];
+
+
+
+export const Photo = [
+  {
+    name:"Johnny Depp",
+    image: imaga ,
+  },
+  {
+    name:"Tom Cruise",
+    image: imagt ,
+  },
+  {
+    name:"Will Smith",
+    image: imagc ,
+  },
+  {
+    name:"Irina Shayk",
+    image: imagf ,
+  },
+  {
+    name:" Jason Statham",
+    image: imago ,
+  },
+  {
+    name:"Morgan Freeman",
+    image: imagz ,
   },
 ];

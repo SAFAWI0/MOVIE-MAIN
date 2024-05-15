@@ -5,7 +5,8 @@ import { Categories } from "./Components/Categories/categories";
 import { Search } from "./Components/Search/search";
 import { Login } from "./Components/Profile/login/login";
 import { Reg } from "./Components/Profile/reg/reg";
-import { CategoriesPage } from "./Components/CategoriesPage/categoriesPage";
+import { MoviePage } from "./Components/CategoriesPage/moviePage";
+
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/categories" element={<Categories />} />
-        <Route path="/categoriesPage/:id" element={<CategoriesPage />} />
+        <Route path="/categoriesPage/:id" element={<MoviePage />} />
         <Route path="/search" element={<Search />} />
         <Route path="/register" element={<Reg />} />
         <Route path="/Login" element={<Login />} />

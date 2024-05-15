@@ -20,11 +20,15 @@ export const Footer = () => {
           </Link>
 
           <Link to={"/categories"}>
-            <TbCategory className="icon" />
+           <button>
+
+              <TbCategory className="icon"  tabIndex="0"/>
+           </button>
+            
           </Link>
 
           <Link to={"/"}>
-            <GoHomeFill className="icon" />
+            <GoHomeFill className="icon" tabIndex="0" />
           </Link>
         </div>
       </Container>

@@ -59,7 +59,7 @@ export const Search = () => {
           {products.map((el, i) => (
             <div key={i} className="content-search">
               <div className="icon-play">
-                <FaPlay style={{ fontSize: "20px" }} />
+                <FaPlay style={{ fontSize: "20px", color:"#fff" }} />
               </div>
               <div className="content-sea">
                 <div className="titel">

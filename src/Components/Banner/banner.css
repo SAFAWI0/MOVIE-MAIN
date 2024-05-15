@@ -1,13 +1,15 @@
 .app-banner {
   margin-top: 10px;
-  height: 200px;
+  height: 300px;
   width: 100%;
   border-radius: 8px;
   background-color: #535353;
-  overflow: hidden;
+  overflow: visible;
+
 }
 .app-banner img {
   width: 100%;
-  height: 200px;
+  border-radius: 8px;
+  height: 300px;
   /* object-fit: cover; */
 }

@@ -38,7 +38,7 @@ export const Card = () => {
         {value.map((el, i) => (
           <li key={i}>
             <Link to={`/categoriesPage/${el.id}`}>
-              <div key={i} className="grid">
+              <div  className="grid">
                 <img
                   src={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
                   alt="not found"

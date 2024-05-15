@@ -1,7 +1,7 @@
 .search-box {
   margin-top: 10px;
   display: flex;
-  border: 1px solid #000;
+  border: 1px solid #fff;
   background-color: #919191;
   border-radius: 12px;
   overflow: hidden;
@@ -46,9 +46,11 @@
   width: 90px;
   height: 100px;
   border-radius: 12px;
+  background-color: #fff;
 }
 .sea-card .content-sea .titel {
   text-align: end;
+  color: #fff;
 }
 .sea-card .content-sea .titel .eval {
   display: flex;

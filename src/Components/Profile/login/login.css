@@ -8,7 +8,7 @@
 .profile .text p {
   font-size: 22px;
   font-weight: bold;
-  color: #383737;
+  color: #fff;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -49,6 +49,7 @@ input::placeholder {
 }
 .profile .registration a {
   text-decoration: none;
+  color: #fff;
 }
 .profile .registration .link {
   font-size: 18px;
@@ -56,6 +57,7 @@ input::placeholder {
   margin-top: 10px;
   text-align: end;
   margin-bottom: 20px;
+  
 }
 .profile .registration button {
   height: 30px;
@@ -74,6 +76,7 @@ input::placeholder {
 }
 .profile .registration .login span {
   display: block;
+  color: #fff;
 }
 .profile .registration .login .google img {
   width: 18px;
@@ -99,6 +102,7 @@ input::placeholder {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  
 }
 .profile .registration .login .reg button {
   width: 100px;
@@ -110,5 +114,5 @@ input::placeholder {
   background-color: #777575;
 }
 .profile .registration .login .reg p {
-  color: #000;
+  color: #fff;
 }
