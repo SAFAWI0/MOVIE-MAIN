@@ -1,9 +1,7 @@
 import "./moviePage.css";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import Container from "../Container/container";
 import { FaStar } from "react-icons/fa";
-import { CiYoutube } from "react-icons/ci";
 import { GrLike } from "react-icons/gr";
 import { GrDislike } from "react-icons/gr";
 import { message } from "antd";
@@ -13,7 +11,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { AiOutlineYoutube } from "react-icons/ai";
 import { FaPlay } from "react-icons/fa";
 import { TbExclamationMark } from "react-icons/tb";
-import { Modal, Card } from "antd";
+import { Modal } from "antd";
 import { Photo } from "../../fake";
 
 export const MoviePage = () => {
@@ -102,10 +100,10 @@ export const MoviePage = () => {
                     </span>
                   </div>
                   <div className="family">
-                    <FaUsers className="icon" />
+                    <FaUsers className="icon-family" />
                   </div>
                   <div className="view">
-                    <IoEyeOutline className="icon" />
+                    <IoEyeOutline className="icon-family" />
                     <p>
                       {value.vote_count
                         ? value.vote_count.toLocaleString()
@@ -124,7 +122,7 @@ export const MoviePage = () => {
                     ))}
                 </div>
 
-                {/* <div className="overview">
+                 <div className="overview">
                   <span>
                     {value.overview &&
                       (isExpanded || value.overview.length < 100
@@ -136,9 +134,10 @@ export const MoviePage = () => {
                       {isExpanded ? "Show Less" : "Show More"}
                     </button>
                   )}
-                </div> */}
+                </div> 
 
-                {/* <div className="content-line-2">
+
+                <div className="content-line-2">
                   <div className="butt-play">
                     <button> Play Now</button>
                     <FaPlay className="icon-play" />
@@ -205,7 +204,13 @@ export const MoviePage = () => {
                       </Modal>
                     </div>
                   </div>
-                </div> */}
+                </div>
+
+
+
+
+
+
               </div> 
             </div>
 

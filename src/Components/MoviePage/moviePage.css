@@ -42,6 +42,10 @@
   align-items: center;
   gap: 28px;
 }
+.categoriesPage .content-cat .information .icon-family {
+  font-size: 28px;
+  color: #fff;
+}
 .categoriesPage .content-cat .information .content-line .star {
   display: flex;
   justify-content: center;
@@ -73,7 +77,7 @@
 }
 .categoriesPage .content-cat .information .overview {
   color: #fff;
-  width: 800px;
+  width: 400px;
   margin-bottom: 28px;
 }
 .categoriesPage .content-cat .information .overview button {
@@ -89,6 +93,7 @@
   justify-content: start;
   align-items: center;
   gap: 28px;
+  margin-bottom: 35px;
 }
 .categoriesPage .content-cat .information .content-line-2 .butt-play {
   position: relative;
@@ -140,6 +145,7 @@
   width: 90px;
   height: 40px;
   cursor: pointer;
+  font-size: 18px;
 }
 .categoriesPage .content-cat .information .content-line-2 .like:hover {
   background-color: #635b5b;
@@ -150,7 +156,6 @@
 .categoriesPage .content-cat .information .content-line-2 .icons {
   font-size: 32px;
   width: 100%;
-  height: 100%;
 }
 .deta-mov .details {
   display: flex;
@@ -186,7 +191,6 @@
   color: #fff;
   margin-bottom: 8px;
 }
-
 .photo .image-photo img {
   width: 150px;
   height: 150px;
@@ -199,7 +203,51 @@
   font-weight: 100;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 1180px) {
+  .categoriesPage .content-cat .information .content-line-2 .like {
+    border-radius: 8px;
+    width: 60px;
+    height: 40px;
+  }
+  .categoriesPage .content-cat .information .content-line-2 .icon-play {
+    right: 105px;
+    font-size: 16px;
+  }
+  .categoriesPage .content-cat .information .content-line-2 .butt-play button {
+    width: 130px;
+    height: 60px;
+    font-size: 16px;
+  }
+  .categoriesPage .content-cat .information .content-line-2 .icon-like {
+    font-size: 16px;
+  }
+  .categoriesPage .content-cat .information .content-line-2 {
+    gap: 8px;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .categoriesPage .content-cat .information .content-line-2 .like {
+    border-radius: 8px;
+    width: 50px;
+    height: 40px;
+    font-size: 14px;
+  }
+  .categoriesPage .content-cat .information .content-line-2 .icon-like {
+    font-size: 16px;
+  }
+  .categoriesPage .content-cat .information .content-line-2 .icon-play {
+    right: 105px;
+    font-size: 16px;
+  }
+  .categoriesPage .content-cat .information .content-line-2 .butt-play button {
+    width: 140px;
+    height: 60px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 900px) {
   .categoriesPage .content-cat .image img {
     display: none;
   }
@@ -209,14 +257,104 @@
   .categoriesPage .content-cat .inCover {
     margin-left: -18px;
   }
+  .categoriesPage .content-cat .information .overview {
+    width: 400px;
+  }
+  .categoriesPage .content-cat .information .content-line-2 .icon-play {
+    right: 95px;
+    font-size: 14px;
+  }
+  .categoriesPage .content-cat .information .content-line-2 .butt-play button {
+    width: 120px;
+    height: 60px;
+    font-size: 14px;
+  }
 }
+
+
+
+
+
+@media screen and (max-width: 510px) {
+  .categoriesPage .content-cat .information .content-line-2 .like {
+    border-radius: 8px;
+    width: 80px;
+    height: 40px;
+  }
+  .categoriesPage .content-cat .information .content-line-2 .icon-play {
+    right: 170px;
+    font-size: 18px;
+  }
+  .categoriesPage .content-cat .information .content-line-2 .butt-play button {
+    width: 160px;
+    height: 60px;
+    font-size: 18px;
+  }
+  .categoriesPage .content-cat .information .content-line-2 .icon-like {
+    font-size: 18px;
+  }
+  .categoriesPage .content-cat .information .content-line-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+  }
+
+  .categoriesPage .content-cat .information .content-line-2 .eva-view {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+ 
+}
+
+
+
+
 
 @media screen and (max-width: 420px) {
   .categoriesPage .content-cat .information .content-line {
     gap: 18px;
   }
-}
-@media screen and (max-width: 380px) {
- 
+  .categoriesPage .content-cat .information .overview {
+    width: 300px;
+  }
+  .categoriesPage .content-cat .information .content-line-2 .like {
+    border-radius: 8px;
+    width: 60px;
+    height: 40px;
+  }
+  .categoriesPage .content-cat .information .content-line-2 .icon-play {
+ display: none;
+  }
+  .categoriesPage .content-cat .information .content-line-2 .butt-play button {
+    width: 120px;
+    height: 60px;
+    font-size: 18px;
+  }
+  .categoriesPage .content-cat .information .content-line-2 .icon-like {
+    font-size: 18px;
+  }
+  .categoriesPage .content-cat .information .content-line-2{
+    margin-right: 20px;
+  }
 }
 
+
+
+
+
+@media screen and (max-width: 380px) {
+  .categoriesPage .content-cat .information .content-line .star {
+    font-size: 18px;
+  }
+  .categoriesPage .content-cat .information .content-line .date {
+    font-size: 18px;
+  }
+  .categoriesPage .content-cat .information .content-line .view {
+    font-size: 18px;
+  }
+  .categoriesPage .content-cat .information .family .icon-family {
+    font-size: 20px;
+  }
+}

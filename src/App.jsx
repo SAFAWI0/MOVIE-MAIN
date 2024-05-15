@@ -5,7 +5,8 @@ import { Categories } from "./Components/Categories/categories";
 import { Search } from "./Components/Search/search";
 import { Login } from "./Components/Profile/login/login";
 import { Reg } from "./Components/Profile/reg/reg";
-import { MoviePage } from "./Components/CategoriesPage/moviePage";
+import { MoviePage } from "./Components/MoviePage/moviePage";
+
 
 
 function App() {
