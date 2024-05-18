@@ -109,4 +109,28 @@ export const Photo = [
     name:"Morgan Freeman",
     image: imagz ,
   },
+  {
+    name:"Johnny Depp",
+    image: imaga ,
+  },
+  {
+    name:"Tom Cruise",
+    image: imagt ,
+  },
+  {
+    name:"Will Smith",
+    image: imagc ,
+  },
+  {
+    name:"Irina Shayk",
+    image: imagf ,
+  },
+  {
+    name:" Jason Statham",
+    image: imago ,
+  },
+  {
+    name:"Morgan Freeman",
+    image: imagz ,
+  },
 ];

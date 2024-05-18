@@ -13,7 +13,6 @@ import { FaPlay } from "react-icons/fa";
 import { TbExclamationMark } from "react-icons/tb";
 import { Modal } from "antd";
 import { Photo } from "../../fake";
-import Container from "../Container/container";
 import { Card } from "../Card/card";
 
 export const MoviePage = () => {
@@ -40,7 +39,7 @@ export const MoviePage = () => {
   };
   useEffect(() => {
     getData();
-  }, []);
+  }, [id]);
 
   const handleonclick = () => {
     messageApi.open({
@@ -225,8 +224,7 @@ export const MoviePage = () => {
 
             <div className="line" />
             <div className="more-movie">
-              <h1>افلام مشابهة</h1>
-
+              <h3>افلام مشابهة</h3>
               <Card />
             </div>
           </div>

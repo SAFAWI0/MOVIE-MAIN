@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/categories" element={<Categories />} />
-        <Route path="/categoriesPage/:id" element={<MoviePage />} />
+        <Route path="/categoriesPage/:id" element={<MoviePage/>} />
         <Route path="/search" element={<Search />} />
         <Route path="/register" element={<Reg />} />
         <Route path="/Login" element={<Login />} />
