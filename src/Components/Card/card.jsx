@@ -31,14 +31,13 @@ export const Card = () => {
   useEffect(() => {
     getData();
   }, []);
-
   return (
     <div className="card">
       <ul>
         {value.map((el, i) => (
           <li key={i}>
             <Link to={`/categoriesPage/${el.id}`}>
-              <div  className="grid">
+              <div key={i} className="grid">
                 <img
                   src={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
                   alt="not found"

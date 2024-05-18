@@ -41,6 +41,13 @@ export const Sections = () => {
         </div>
         <Card />
       </div>
+      <div>
+        <div className="content">
+          <span>المزيد</span>
+          <p>المسلسلات المميزة</p>
+        </div>
+        <Card />
+      </div>
       </Container>
       <div style={{ marginTop: "50px" }} />
     </div>

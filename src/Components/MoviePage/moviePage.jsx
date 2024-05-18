@@ -13,6 +13,8 @@ import { FaPlay } from "react-icons/fa";
 import { TbExclamationMark } from "react-icons/tb";
 import { Modal } from "antd";
 import { Photo } from "../../fake";
+import Container from "../Container/container";
+import { Card } from "../Card/card";
 
 export const MoviePage = () => {
   const { id } = useParams();
@@ -68,7 +70,6 @@ export const MoviePage = () => {
           </div>
 
           <div className="Cover">
-            {/* <Container>  */}
             <div className="inCover">
               <div className="image">
                 <img
@@ -76,7 +77,6 @@ export const MoviePage = () => {
                   alt={value.title}
                 ></img>
               </div>
-
               <div className="information">
                 <div className="title">
                   <h3>{value.title}</h3>
@@ -122,7 +122,7 @@ export const MoviePage = () => {
                     ))}
                 </div>
 
-                 <div className="overview">
+                <div className="overview">
                   <span>
                     {value.overview &&
                       (isExpanded || value.overview.length < 100
@@ -134,8 +134,7 @@ export const MoviePage = () => {
                       {isExpanded ? "Show Less" : "Show More"}
                     </button>
                   )}
-                </div> 
-
+                </div>
 
                 <div className="content-line-2">
                   <div className="butt-play">
@@ -205,32 +204,31 @@ export const MoviePage = () => {
                     </div>
                   </div>
                 </div>
-
-
-
-
-
-
-              </div> 
+              </div>
             </div>
 
             <div className="chara">
               <p>Characters</p>
               <div className="photo">
-              <ul>
-                {Photo.map((el, i) => (
-                  <li key={i}>
-                  <div  className="image-photo">
-                    <img src={el.image}></img>
-                    <p>{el.name}</p>
-                  </div>
-                </li>
-                ))}
+                <ul>
+                  {Photo.map((el, i) => (
+                    <li key={i}>
+                      <div className="image-photo">
+                        <img src={el.image}></img>
+                        <p>{el.name}</p>
+                      </div>
+                    </li>
+                  ))}
                 </ul>
               </div>
-            </div> 
+            </div>
 
-            {/* </Container> */}
+            <div className="line" />
+            <div className="more-movie">
+              <h1>افلام مشابهة</h1>
+
+              <Card />
+            </div>
           </div>
         </div>
       )}

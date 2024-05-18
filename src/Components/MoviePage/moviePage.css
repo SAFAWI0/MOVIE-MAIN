@@ -16,12 +16,12 @@
   top: 0;
   right: 0;
   margin-top: 380px;
-  background: linear-gradient(to bottom, rgba(255, 0, 0, 0), #e0303c);
+  background: linear-gradient(to bottom, rgba(255, 0, 0, 0), #1a1919);
 }
 .categoriesPage .content-cat .inCover {
   display: flex;
   justify-content: start;
-  align-items: center;
+  align-items: end;
   gap: 28px;
   margin-top: 130px;
   margin-left: 50px;
@@ -82,7 +82,7 @@
 }
 .categoriesPage .content-cat .information .overview button {
   border: none;
-  color: #000;
+  color: #ff0000;
   background-color: transparent;
   font-weight: bold;
   cursor: pointer;
@@ -93,7 +93,7 @@
   justify-content: start;
   align-items: center;
   gap: 28px;
-  margin-bottom: 35px;
+  /* margin-bottom: 35px; */
 }
 .categoriesPage .content-cat .information .content-line-2 .butt-play {
   position: relative;
@@ -167,14 +167,15 @@
   border-radius: 8px;
   font-weight: bold;
   font-size: 18px;
-  background-color: #ce5d5d;
+  background-color: #1a1919;
+  color: #fff;
 }
 .ant-modal-title {
   text-align: center;
 }
 
 .chara {
-  margin-left: 50px;
+  margin: 0 50px;
 }
 .chara ul {
   display: flex;
@@ -201,6 +202,18 @@
 .photo .image-photo p {
   font-size: 18px;
   font-weight: 100;
+}
+.line {
+  border-bottom: 1px solid #eeeeee38;
+  margin: 28px 50px;
+}
+.more-movie {
+  color: #fff;
+  text-align: end;
+  margin: 0 50px;
+}
+.more-movie h1 {
+  margin-bottom: 8px;
 }
 
 @media screen and (max-width: 1180px) {
@@ -253,6 +266,7 @@
   }
   .chara {
     margin-left: 8px;
+    margin-right: 8px;
   }
   .categoriesPage .content-cat .inCover {
     margin-left: -18px;
@@ -269,11 +283,15 @@
     height: 60px;
     font-size: 14px;
   }
+  .more-movie {
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+  .line {
+    margin-right: 8px;
+    margin-left: 8px;
+  }
 }
-
-
-
-
 
 @media screen and (max-width: 510px) {
   .categoriesPage .content-cat .information .content-line-2 .like {
@@ -304,13 +322,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
   }
-
- 
 }
-
-
-
-
 
 @media screen and (max-width: 420px) {
   .categoriesPage .content-cat .information .content-line {
@@ -325,7 +337,7 @@
     height: 40px;
   }
   .categoriesPage .content-cat .information .content-line-2 .icon-play {
- display: none;
+    display: none;
   }
   .categoriesPage .content-cat .information .content-line-2 .butt-play button {
     width: 120px;
@@ -335,14 +347,10 @@
   .categoriesPage .content-cat .information .content-line-2 .icon-like {
     font-size: 18px;
   }
-  .categoriesPage .content-cat .information .content-line-2{
+  .categoriesPage .content-cat .information .content-line-2 {
     margin-right: 20px;
   }
 }
-
-
-
-
 
 @media screen and (max-width: 380px) {
   .categoriesPage .content-cat .information .content-line .star {

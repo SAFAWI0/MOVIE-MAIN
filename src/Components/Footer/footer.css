@@ -5,22 +5,27 @@
   left: 0;
   z-index: 3;
   padding: 8px;
-  background-color: rgba(236, 210, 230, 0.562);
+  background-color: #0000004f;
   backdrop-filter: blur(5px);
 }
-.icon {
+.footer .content-footer button{
+  border: none;
+  background-color: transparent;
+}
+.footer .content-footer .icon {
   color: #fff;
   font-size: 32px;
   cursor: pointer;
 }
 
-.icon:focus {
- color: pink;
+.footer .content-footer .icon:focus {
+  color: rgb(255, 0, 0);
 }
-.content-footer {
+.footer .content-footer .icon:hover {
+  color: rgb(255, 0, 0);
+}
+.footer .content-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-
