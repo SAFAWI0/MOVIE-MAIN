@@ -1,6 +1,6 @@
 import "./moviePage.css";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { GrLike } from "react-icons/gr";
 import { GrDislike } from "react-icons/gr";
@@ -14,6 +14,10 @@ import { TbExclamationMark } from "react-icons/tb";
 import { Modal } from "antd";
 import { Photo } from "../../fake";
 import { Card } from "../Card/card";
+import { Footer } from "../Footer/footer";
+import { IoMdArrowBack } from "react-icons/io";
+import { CiBookmark } from "react-icons/ci";
+import { IoBookmark } from "react-icons/io5";
 
 export const MoviePage = () => {
   const { id } = useParams();
@@ -21,7 +25,8 @@ export const MoviePage = () => {
   const [messageApi, contextHolder] = message.useMessage();
   const [isExpanded, setIsExpanded] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const [isSaved, setIsSaved] = useState(false);
+  const navigate = useNavigate();
   const getData = () => {
     var requestOptions = {
       method: "GET",
@@ -57,6 +62,21 @@ export const MoviePage = () => {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+  const handelIsBack = () => {
+    navigate(-1);
+  };
+  const handelIsSave = () => {
+    messageApi.open({
+      content: "   تمت الحذف",
+    });
+    setIsSaved(!isSaved);
+  };
+  const handelNotSave = () => {
+    messageApi.open({
+      content: " تمت الاضافة بنجاح",
+    });
+    setIsSaved(!isSaved);
+  };
   return (
     <div className="categoriesPage">
       {value && (
@@ -66,6 +86,16 @@ export const MoviePage = () => {
               src={`https://image.tmdb.org/t/p/w500${value.poster_path}`}
               alt={value.title}
             ></img>
+            <div className="header">
+              <div className="content">
+                <IoMdArrowBack className="icon-head" onClick={handelIsBack} />
+                {isSaved ? (
+                  <IoBookmark className="icon-head" onClick={handelIsSave} />
+                ) : (
+                  <CiBookmark className="icon-head" onClick={handelNotSave} />
+                )}
+              </div>
+            </div>
           </div>
 
           <div className="Cover">
@@ -230,7 +260,7 @@ export const MoviePage = () => {
           </div>
         </div>
       )}
-
+      <Footer />
       {contextHolder}
     </div>
   );

@@ -3,11 +3,28 @@
   width: 100%;
   height: 750px;
 }
-
+.categoriesPage .header .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  margin: 0 50px;
+}
+.icon-head {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8px;
+  border-radius: 8px;
+}
 .categoriesPage .content-cat .image-cover img {
   width: 100%;
   height: 750px;
   /* object-fit: cover; */
+  position: relative;
 }
 .categoriesPage .content-cat .Cover {
   position: absolute;
@@ -210,6 +227,7 @@
   color: #fff;
   text-align: end;
   margin: 0 50px;
+  height: 250px;
 }
 .content-cat .Cover .more-movie h3 {
   margin-bottom: 8px;
@@ -289,6 +307,9 @@
   .content-cat .Cover .line {
     margin-right: 8px;
     margin-left: 8px;
+  }
+  .categoriesPage .header .content {
+    margin: 0 8px;
   }
 }
 
