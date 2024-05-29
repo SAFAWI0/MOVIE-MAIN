@@ -1,0 +1,64 @@
+.comment {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+.comment .image-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+}
+.comment .image-cover img {
+  width: 100%;
+  height: 100%;
+
+}
+.comment .content-comm {
+  position: relative;
+  background-color: #f1ecec07;
+padding: 10px;
+}
+.comment .content-comm .set {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 10px;
+}
+.content-comm .inf-user {
+  border: 1px solid #5552527a;
+  padding: 8px;
+  border-radius: 8px;
+  width: 500px;
+  min-height: 50px;
+  margin-bottom: 10px;
+  background-color: #555252d3;
+}
+
+.content-comm .inf-user .name-date {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+}
+.content-comm .inf-user .name-date span {
+  color: #a09b9b;
+}
+.content-comm .inf-user .name-date p {
+  color: #fff;
+}
+.content-comm .inf-user .text-comm {
+  text-align: end;
+  margin-top: 20px;
+}
+.content-comm .inf-user .text-comm span {
+  color: #fff;
+}
+.content-comm .image img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}

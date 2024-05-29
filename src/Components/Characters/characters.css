@@ -1,0 +1,38 @@
+.characters .chara {
+  margin: 0 50px;
+}
+.characters .chara ul {
+  display: flex;
+  list-style-type: none;
+  overflow-y: auto;
+  flex-direction: row-reverse;
+  gap: 18px;
+}
+.characters .chara ul::-webkit-scrollbar {
+  display: none;
+}
+.characters .chara p {
+  font-size: 20px;
+  text-align: end;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.characters .photo .image-photo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 18px;
+  border: 1px solid #000;
+  object-fit: cover;
+}
+.characters .photo .image-photo p {
+  font-size: 18px;
+  font-weight: 100;
+  text-align: center;
+}
+@media screen and (max-width: 900px) {
+  .characters .chara {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}

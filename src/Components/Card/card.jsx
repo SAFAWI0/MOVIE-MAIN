@@ -1,11 +1,9 @@
 import "./card.css";
-import { useAppStore } from "../../store";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export const Card = () => {
   const [value, setValue] = useState([]);
-  const { setImagePath } = useAppStore();
 
   const getData = () => {
     const randomNumber = Math.floor(Math.random() * 20) + 1;
@@ -19,12 +17,6 @@ export const Card = () => {
       .then((response) => response.json())
       .then((result) => {
         setValue(result.results);
-        setImagePath(
-          result.results.map((el) => ({
-            name: el.title,
-            image: `https://image.tmdb.org/t/p/w500${el.poster_path}`,
-          }))
-        );
       })
       .catch((error) => console.log("error", error));
   };
@@ -37,8 +29,9 @@ export const Card = () => {
         {value.map((el, i) => (
           <li key={i}>
             <Link to={`/categoriesPage/${el.id}`}>
-              <div className="grid"
-              // onClick={() => window.location.href = `/categoriesPage/${el.id}`}
+              <div
+                className="grid"
+                // onClick={() => window.location.href = `/categoriesPage/${el.id}`}
               >
                 <img
                   src={`https://image.tmdb.org/t/p/w500${el.poster_path}`}

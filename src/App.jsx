@@ -6,8 +6,8 @@ import { Search } from "./Components/Search/search";
 import { Login } from "./Components/Profile/login/login";
 import { Reg } from "./Components/Profile/reg/reg";
 import { MoviePage } from "./Components/MoviePage/moviePage";
-
-
+import { MoreInformation } from "./Components/More-Information/moreInformation";
+import { Comment } from "./Components/Comments/comment";
 
 function App() {
   return (
@@ -15,11 +15,13 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/categories" element={<Categories />} />
-        <Route path="/categoriesPage/:id" element={<MoviePage/>} />
+        <Route path="/categoriesPage/:id" element={<MoviePage />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/categoriesPage/:id/comment" element={<Comment />} />
         <Route path="/register" element={<Reg />} />
         <Route path="/Login" element={<Login />} />
       </Routes>
+      <MoreInformation />
     </div>
   );
 }

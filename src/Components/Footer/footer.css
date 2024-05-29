@@ -19,10 +19,10 @@
 }
 
 .footer .content-footer .icon:focus {
-  color: rgb(255, 0, 0);
+  color: rgb(133, 133, 133);
 }
 .footer .content-footer .icon:hover {
-  color: rgb(255, 0, 0);
+  color: rgb(133, 133, 133);
 }
 .footer .content-footer {
   display: flex;

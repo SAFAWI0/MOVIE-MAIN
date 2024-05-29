@@ -11,21 +11,22 @@ import { FaRegHeart } from "react-icons/fa";
 import { AiOutlineYoutube } from "react-icons/ai";
 import { FaPlay } from "react-icons/fa";
 import { TbExclamationMark } from "react-icons/tb";
-import { Modal } from "antd";
-import { Photo } from "../../fake";
 import { Card } from "../Card/card";
 import { Footer } from "../Footer/footer";
 import { IoMdArrowBack } from "react-icons/io";
 import { CiBookmark } from "react-icons/ci";
 import { IoBookmark } from "react-icons/io5";
+import { useAppStore } from "../../store";
+import { Characters } from "../Characters/characters";
+import { LatestComment } from "../Comments/latestComment ";
 
 export const MoviePage = () => {
   const { id } = useParams();
   const [value, setValue] = useState([]);
   const [messageApi, contextHolder] = message.useMessage();
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
+  const { setIsOpenModal, setMoreInf } = useAppStore();
   const navigate = useNavigate();
   const getData = () => {
     var requestOptions = {
@@ -37,8 +38,17 @@ export const MoviePage = () => {
     )
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
         setValue(result);
+        setMoreInf({
+          budget: result.budget,
+          runtime: result.runtime,
+          origin_country: result.production_countries
+            .map((country) => country.name)
+            .join(", "),
+          popularity: result.popularity,
+          revenue: result.revenue,
+          image: `https://image.tmdb.org/t/p/w500${result.poster_path}`,
+        });
       })
       .catch((error) => console.log("error", error));
   };
@@ -56,12 +66,6 @@ export const MoviePage = () => {
     setIsExpanded(!isExpanded);
   };
 
-  const handleOpen = () => {
-    setIsModalOpen(true);
-  };
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
   const handelIsBack = () => {
     navigate(-1);
   };
@@ -77,6 +81,13 @@ export const MoviePage = () => {
     });
     setIsSaved(!isSaved);
   };
+
+  const handleIsOpen = () => {};
+
+  const handleOpenModal = () => {
+    setIsOpenModal(true);
+  };
+
   return (
     <div className="categoriesPage">
       {value && (
@@ -195,64 +206,28 @@ export const MoviePage = () => {
                       </div>
                     </Link>
 
-                    <div className="like">
-                      <TbExclamationMark
-                        className="icons"
-                        onClick={handleOpen}
-                      />
-                      <Modal
-                        title="Information About The Movie"
-                        onOk={handleCancel}
-                        open={isModalOpen}
-                        onCancel={handleCancel}
-                        footer={null}
-                      >
-                        <div className="deta-mov">
-                          <div className="details">
-                            <span>Budget :</span>
-                            <p>{Number(value.budget).toLocaleString("en")}</p>
-                          </div>
-                          <div className="details">
-                            <span>Runtime :</span>
-                            <p>{value.runtime} m.</p>
-                          </div>
-                          <div className="details">
-                            <span>Original Country :</span>
-                            <p>{value.origin_country}</p>
-                          </div>
-                          <div className="details">
-                            <span>Popularity :</span>
-                            <p>{value.popularity} </p>
-                          </div>
-                          <div className="details">
-                            <span>Revenue :</span>
-                            <p>{Number(value.revenue).toLocaleString("en")} </p>
-                          </div>
-                        </div>
-                      </Modal>
+                    <div className="like" onClick={handleOpenModal}>
+                      <TbExclamationMark className="icons" />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="chara">
-              <p>Characters</p>
-              <div className="photo">
-                <ul>
-                  {Photo.map((el, i) => (
-                    <li key={i}>
-                      <div className="image-photo">
-                        <img src={el.image}></img>
-                        <p>{el.name}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <Characters />
+
+            <div className="comments">
+            <h3>تعليقات</h3>
+              <LatestComment />
+              <Link to={`/categoriesPage/${id}/comment`}>
+                <div className="more-comment" onClick={handleIsOpen}>
+                  <button>عرض الكل</button>
+                </div>
+              </Link>
             </div>
 
             <div className="line" />
+
             <div className="more-movie">
               <h3>افلام مشابهة</h3>
               <Card />
