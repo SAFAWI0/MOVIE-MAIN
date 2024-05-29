@@ -28,6 +28,7 @@ export const MoviePage = () => {
   const [isSaved, setIsSaved] = useState(false);
   const { setIsOpenModal, setMoreInf } = useAppStore();
   const navigate = useNavigate();
+
   const getData = () => {
     var requestOptions = {
       method: "GET",
@@ -67,7 +68,7 @@ export const MoviePage = () => {
   };
 
   const handelIsBack = () => {
-    navigate(-1);
+    navigate(-2);
   };
   const handelIsSave = () => {
     messageApi.open({
@@ -217,7 +218,7 @@ export const MoviePage = () => {
             <Characters />
 
             <div className="comments">
-            <h3>تعليقات</h3>
+              <h3>تعليقات</h3>
               <LatestComment />
               <Link to={`/categoriesPage/${id}/comment`}>
                 <div className="more-comment" onClick={handleIsOpen}>

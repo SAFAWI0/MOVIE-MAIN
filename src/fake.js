@@ -80,6 +80,66 @@ export const products = [
     name: "  رياضي",
     image: imag112 ,
   },
+  {
+    id: 1,
+    name: " اكشن",
+    image: imag1 ,
+  },
+  {
+    id: 2,
+    name: " دراما",
+    image:  imag2 ,
+  },
+  {
+    id: 3,
+    name: " كوميدية",
+    image:  imag3 ,
+  },
+  {
+    id: 4,
+    name: " عائلي",
+    image:  imag4 ,
+  },
+  {
+    id: 5,
+    name: " جريمة",
+    image:  imag5 ,
+  },
+  {
+    id: 6,
+    name: " اثارة",
+    image:  imag6 ,
+  },
+  {
+    id: 7,
+    name: " خارق",
+    image: imag7 ,
+  },
+  {
+    id: 8,
+    name: " رعب",
+    image: imag8 ,
+  },
+  {
+    id: 9,
+    name: " غموض",
+    image: imag9 ,
+  },
+  {
+    id: 10,
+    name: " رسوم متحركة",
+    image: imag10 ,
+  },
+  {
+    id: 11,
+    name: " غنائي ",
+    image: imag111 ,
+  },
+  {
+    id: 12,
+    name: "  رياضي",
+    image: imag112 ,
+  },
 ];
 
 

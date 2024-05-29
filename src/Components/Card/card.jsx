@@ -23,15 +23,17 @@ export const Card = () => {
   useEffect(() => {
     getData();
   }, []);
+
+
   return (
     <div className="card">
       <ul>
         {value.map((el, i) => (
           <li key={i}>
-            <Link to={`/categoriesPage/${el.id}`}>
+            <Link to={`/categoriesPage/${el.id}`}  >
               <div
                 className="grid"
-                // onClick={() => window.location.href = `/categoriesPage/${el.id}`}
+                  onClick={() => window.location.href = `/categoriesPage/${el.id}`}
               >
                 <img
                   src={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
