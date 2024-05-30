@@ -230,10 +230,10 @@ export const MoviePage = () => {
 
             <div className="line" />
 
-            <div className="more-movie">
+            {/* <div className="more-movie">
               <h3>افلام مشابهة</h3>
               <Card />
-            </div>
+            </div> */}
           </div>
         </div>
       )}
