@@ -22,7 +22,7 @@ import { LatestComment } from "../Comments/latestComment ";
 
 export const MoviePage = () => {
   const { id } = useParams();
-  const [value, setValue] = useState([]);
+  const [value, setValue] = useState(null);
   const [messageApi, contextHolder] = message.useMessage();
   const [isExpanded, setIsExpanded] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
@@ -89,6 +89,10 @@ export const MoviePage = () => {
     setIsOpenModal(true);
   };
 
+  if (!value) {
+    return <div>Loading...</div>;
+  }
+  
   return (
     <div className="categoriesPage">
       {value && (
