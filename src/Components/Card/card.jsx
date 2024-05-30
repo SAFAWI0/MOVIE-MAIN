@@ -24,17 +24,17 @@ export const Card = () => {
     getData();
   }, []);
 
+  const handelUp = () => {
+    window.scrollTo(0, 0);
+  };
 
   return (
     <div className="card">
       <ul>
         {value.map((el, i) => (
           <li key={i}>
-            <Link to={`/categoriesPage/${el.id}`}  >
-              <div
-                className="grid"
-                  //onClick={() => window.location.href = `/categoriesPage/${el.id}`}
-              >
+            <Link to={`/categoriesPage/${el.id}`}>
+              <div className="grid" onClick={handelUp}>
                 <img
                   src={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
                   alt="not found"
