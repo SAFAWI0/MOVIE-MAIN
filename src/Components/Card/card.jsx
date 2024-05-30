@@ -33,7 +33,7 @@ export const Card = () => {
             <Link to={`/categoriesPage/${el.id}`}  >
               <div
                 className="grid"
-                  onClick={() => window.location.href = `/categoriesPage/${el.id}`}
+                  //onClick={() => window.location.href = `/categoriesPage/${el.id}`}
               >
                 <img
                   src={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
