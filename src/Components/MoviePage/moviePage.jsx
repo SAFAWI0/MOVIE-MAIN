@@ -57,15 +57,15 @@ export const MoviePage = () => {
     getData();
   }, [id]);
 
-  const handleonclick = () => {
-    messageApi.open({
-      content: "الرجاء تسجيل الدخول",
-    });
-  };
+  // const handleonclick = () => {
+  //   messageApi.open({
+  //     content: "الرجاء تسجيل الدخول",
+  //   });
+  // };
 
-  const toggleExpansion = () => {
-    setIsExpanded(!isExpanded);
-  };
+  // const toggleExpansion = () => {
+  //   setIsExpanded(!isExpanded);
+  // };
 
   const handelIsBack = () => {
     navigate(-2);
@@ -83,11 +83,11 @@ export const MoviePage = () => {
     setIsSaved(!isSaved);
   };
 
-  const handleIsOpen = () => {};
+  // const handleIsOpen = () => {};
 
-  const handleOpenModal = () => {
-    setIsOpenModal(true);
-  };
+  // const handleOpenModal = () => {
+  //   setIsOpenModal(true);
+  // };
 
   return (
     <div className="categoriesPage">
@@ -111,7 +111,7 @@ export const MoviePage = () => {
             </div>
           </div>
 
-          <div className="Cover">
+          {/* <div className="Cover">
             <div className="inCover">
               <div className="image">
                 <img
@@ -216,7 +216,7 @@ export const MoviePage = () => {
               </div>
             </div>
 
-            {/* <Characters />
+            <Characters />
 
             <div className="comments">
               <h3>تعليقات</h3>
@@ -226,15 +226,15 @@ export const MoviePage = () => {
                   <button>عرض الكل</button>
                 </div>
               </Link>
-            </div> */}
+            </div>
 
             <div className="line" />
 
-            {/* <div className="more-movie">
+            <div className="more-movie">
               <h3>افلام مشابهة</h3>
               <Card />
-            </div> */}
-          </div>
+            </div>
+          </div> */}
         </div>
       )}
       <Footer />
