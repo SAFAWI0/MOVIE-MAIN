@@ -2,23 +2,30 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
+  margin-bottom: 80px;
 }
 
 .categories .cat {
   position: relative;
+  cursor: pointer;
 }
 
 .categories .image img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 120px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
-
+.categories .cat:active .image img {
+  transform: scale(1.1);
+}
+.categories .cat:hover .image img {
+  transform: scale(1.1);
+}
 .categories .cat p {
   position: absolute;
   bottom: 10px;
   left: 10px;
-  margin: 0;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 5px;

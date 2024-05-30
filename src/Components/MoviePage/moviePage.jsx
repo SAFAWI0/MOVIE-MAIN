@@ -28,8 +28,7 @@ export const MoviePage = () => {
   const [isSaved, setIsSaved] = useState(false);
   const { setIsOpenModal, setMoreInf } = useAppStore();
   const navigate = useNavigate();
- 
-  
+
   const getData = () => {
     var requestOptions = {
       method: "GET",
@@ -90,8 +89,6 @@ export const MoviePage = () => {
     setIsOpenModal(true);
   };
 
- 
-
   return (
     <div className="categoriesPage">
       {value && (
@@ -101,6 +98,7 @@ export const MoviePage = () => {
               src={`https://image.tmdb.org/t/p/w500${value.poster_path}`}
               alt={value.title}
             ></img>
+
             <div className="header">
               <div className="content">
                 <IoMdArrowBack className="icon-head" onClick={handelIsBack} />
@@ -218,7 +216,7 @@ export const MoviePage = () => {
               </div>
             </div>
 
-            <Characters />
+            {/* <Characters />
 
             <div className="comments">
               <h3>تعليقات</h3>
@@ -228,7 +226,7 @@ export const MoviePage = () => {
                   <button>عرض الكل</button>
                 </div>
               </Link>
-            </div>
+            </div> */}
 
             <div className="line" />
 
