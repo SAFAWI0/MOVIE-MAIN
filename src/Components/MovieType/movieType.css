@@ -4,7 +4,7 @@
 
 .movieType .movies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(147px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 10px;
   margin-bottom: 50px;
 }
@@ -31,4 +31,9 @@
   font-size: 16px;
   text-align: center;
   color: #333;
+}
+@media screen and (max-width: 375px) {
+  .movieType .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
 }
