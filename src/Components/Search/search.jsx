@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Header from "../Header/header";
 import { FaStar } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export const Search = () => {
   const [products, setProducts] = useState([]);
@@ -55,37 +56,50 @@ export const Search = () => {
             />
           </button>
         </div>
+
         <div className="sea-card">
           {products.map((el, i) => (
-            <div key={i} className="content-search">
-              <div className="icon-play">
-                <FaPlay style={{ fontSize: "20px", color:"#fff" }} />
-              </div>
-              <div className="content-sea">
-                <div className="titel">
-                  <h3>{el.original_title}</h3>
-                  <div className="eval">
-                    <span>رعب |</span>
-                    <span> دراما |</span>
-                    <span>{el.release_date.substring(0, 4)}</span>
+            <Link to={`/moviePage/${el.id}`} key={i}>
+              <div className="content-search">
+                <div className="icon-play">
+                  <FaPlay style={{ fontSize: "28px", color: "#fff" }} />
+                </div>
+                <div className="content-sea">
+                  <div className="titel">
+                    <h3>{el.original_title}</h3>
+
+                    <div className="eval">
+                      {el.genres &&
+                        el.genres.map((genre, i) => (
+                          <span key={i}>
+                            {genre.name}
+                            {i !== el.genres.length - 1 && " | "}
+                          </span>
+                        ))}
+                      <span>
+                        {el.release_date &&
+                          el.release_date.substring(0, 4)}
+                      </span>
+                    </div>
+
+                    <div className="star">
+                      <FaStar style={{ color: "gold", marginBottom: "4px" }} />
+                      <p>
+                        {el.vote_average !== 0 ? el.vote_average.toFixed(1) : 0}
+                      </p>
+                    </div>
                   </div>
-                  <div className="star">
-                    <FaStar style={{ color: "gold", marginBottom: "4px" }} />
-                    <p>
-                      {el.vote_average !== 0 ? el.vote_average.toFixed(1) : 0}
-                    </p>
+                  <div className="image">
+                    <img
+                      src={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
+                      alt="not found"
+                    />
                   </div>
                 </div>
-                <div className="image">
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
-                    alt="not found"
-                  />
-                </div>
               </div>
-            </div>
+            </Link>
           ))}
-        </div>    
+        </div>
       </Container>
       <Footer />
     </div>

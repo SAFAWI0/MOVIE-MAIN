@@ -58,7 +58,8 @@
   align-items: start;
   gap: 5px;
   margin-top: 10px;
-  color: #919191;
+  /* color: #919191; */
+  color: red;
   font-weight: bold;
 }
 .sea-card .content-sea .star {
@@ -88,4 +89,5 @@
   display: flex;
   justify-content: start;
   align-items: center;
+  margin-left: 10px;
 }

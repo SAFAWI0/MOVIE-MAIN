@@ -32,7 +32,6 @@
   border-radius: 3px;
 }
 
-
 @media screen and (max-width: 805px) {
   .categories .grid-image {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
