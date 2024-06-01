@@ -1,0 +1,34 @@
+.movieType {
+  padding: 20px;
+}
+
+.movieType .movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.movieType .movie-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.movieType .movie-card:hover {
+  border: 1px solid #ffffff;
+}
+
+.movieType .movie-card img {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px 8px 0 0;
+}
+
+.movieType .movie-card h3 {
+  margin: 2px 0;
+  font-size: 16px;
+  text-align: center;
+  color: #333;
+}

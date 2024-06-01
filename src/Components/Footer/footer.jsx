@@ -12,7 +12,7 @@ export const Footer = () => {
     <div className="footer">
       <Container>
         <div className="content-footer">
-          <Link to={"/Login"}>
+          <Link to={"/login"}>
             <button>
               <CgProfile className="icon" tabIndex="0" />
             </button>

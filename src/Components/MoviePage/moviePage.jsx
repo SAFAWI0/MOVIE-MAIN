@@ -28,8 +28,7 @@ export const MoviePage = () => {
   const [isSaved, setIsSaved] = useState(false);
   const { setIsOpenModal, setMoreInf } = useAppStore();
   const navigate = useNavigate();
- 
-  
+
   const getData = () => {
     var requestOptions = {
       method: "GET",
@@ -69,7 +68,7 @@ export const MoviePage = () => {
   };
 
   const handelIsBack = () => {
-    navigate(-2);
+    navigate(-1);
   };
   const handelIsSave = () => {
     messageApi.open({
@@ -90,8 +89,6 @@ export const MoviePage = () => {
     setIsOpenModal(true);
   };
 
- 
-
   return (
     <div className="categoriesPage">
       {value && (
@@ -101,7 +98,6 @@ export const MoviePage = () => {
               src={`https://image.tmdb.org/t/p/w500${value.poster_path}`}
               alt={value.title}
             ></img>
-
 
             <div className="header">
               <div className="content">
@@ -113,8 +109,6 @@ export const MoviePage = () => {
                 )}
               </div>
             </div>
-
-            
           </div>
 
           <div className="Cover">
@@ -227,7 +221,7 @@ export const MoviePage = () => {
             <div className="comments">
               <h3>تعليقات</h3>
               <LatestComment />
-              <Link to={`/categoriesPage/${id}/comment`}>
+              <Link to={`/moviePage/${id}/comment`}>
                 <div className="more-comment" onClick={handleIsOpen}>
                   <button>عرض الكل</button>
                 </div>

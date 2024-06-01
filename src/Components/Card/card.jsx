@@ -33,7 +33,7 @@ export const Card = () => {
       <ul>
         {value.map((el, i) => (
           <li key={i}>
-            <Link to={`/categoriesPage/${el.id}`}>
+            <Link to={`/moviePage/${el.id}`}>
               <div className="grid" onClick={handelUp}>
                 <img
                   src={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
