@@ -33,7 +33,6 @@ export const Search = () => {
   const handleInputChange = () => {
     setSearch(value);
   };
-  console.log(products);
 
   return (
     <div className="search">
@@ -69,16 +68,8 @@ export const Search = () => {
                     <h3>{el.original_title}</h3>
 
                     <div className="eval">
-                      {el.genres &&
-                        el.genres.map((genre, i) => (
-                          <span key={i}>
-                            {genre.name}
-                            {i !== el.genres.length - 1 && " | "}
-                          </span>
-                        ))}
                       <span>
-                        {el.release_date &&
-                          el.release_date.substring(0, 4)}
+                        {el.release_date && el.release_date.substring(0, 4)}
                       </span>
                     </div>
 

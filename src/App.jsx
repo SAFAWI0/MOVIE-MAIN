@@ -9,6 +9,7 @@ import { MoviePage } from "./Components/MoviePage/moviePage";
 import { MoreInformation } from "./Components/MoreInformation/moreInformation";
 import { Comment } from "./Components/Comments/comment";
 import { MovieType } from "./Components/MovieType/movieType";
+import { MoreMovie } from "./Components/MoreMovie/moreMovie";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/moviePage/:id/comment" element={<Comment />} />
         <Route path="/movieType/:genre" element={<MovieType />} />
         <Route path="/register" element={<Reg />} />
+        <Route path="/moreMovie/:sectionTitle" element={<MoreMovie />} />
         <Route path="/login" element={<Login />} />
       </Routes>
       <MoreInformation />

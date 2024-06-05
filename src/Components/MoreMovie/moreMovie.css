@@ -1,0 +1,39 @@
+.moreMovie .header-moreMovie .content-moreMovie{
+  color: #fff;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 20px;
+  font-size: 24px;
+padding: 20px 0;
+}
+
+.moreMovie .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.moreMovie .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 10px;
+  max-width: 100%;
+}
+
+.moreMovie .gridImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media screen and (max-width: 670px) {
+  .moreMovie .container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}
+@media screen and (max-width: 360px) {
+  .moreMovie .container {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+}
