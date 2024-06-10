@@ -5,10 +5,15 @@
   position: relative;
   gap: 18px;
   flex-direction: row-reverse;
+  padding: 1px;
 }
 .card ul::-webkit-scrollbar {
   display: none;
 }
+.grid img:hover {
+  outline: 1px solid #ffffff;
+}
+
 .grid img {
   width: 100px;
   height: 150px;
@@ -27,14 +32,15 @@
   background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0) 0%,
-    rgb(0, 0, 0) 100%
+    rgba(0, 0, 0, 0.233) 100%
   );
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   color: #fff;
+  padding: 1px 3px;
 }
- a{
+a {
   text-decoration: none;
   color: #000;
 }

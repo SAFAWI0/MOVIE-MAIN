@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Container from "../Container/container";
 import { Footer } from "../Footer/footer";
- import Header from "../Header/header";
- import { useAppStore } from "../../store";
+import Header from "../Header/header";
+import { useAppStore } from "../../store";
 
 export const MovieType = () => {
   const { genre } = useParams();
   const [value, setValue] = useState([]);
-    const { nameType } = useAppStore();
+  const { nameType } = useAppStore();
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -47,7 +47,6 @@ export const MovieType = () => {
                     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                     alt={movie.title}
                   />
-                  <h3>{movie.title}</h3>
                 </Link>
               </div>
             ))}

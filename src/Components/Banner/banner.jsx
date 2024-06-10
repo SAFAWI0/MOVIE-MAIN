@@ -20,6 +20,7 @@ const BannerSlider = () => {
     autoplaySpeed: 5000,
     arrows: false,
     
+    
   };
   return (
     <div>

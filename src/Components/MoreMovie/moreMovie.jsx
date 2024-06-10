@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Container from "../Container/container";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { HiArrowSmallRight } from "react-icons/hi2";
+import { Footer } from "../Footer/footer";
 
 export const MoreMovie = () => {
   const [value, setValue] = useState([]);
@@ -34,15 +35,18 @@ export const MoreMovie = () => {
 
   return (
     <div className="moreMovie">
-      <div className="header-moreMovie">
-        <div className="content-moreMovie">
-          <p> {sectionTitle}</p>
-          <HiArrowSmallRight onClick={handelIsBack} />
+      <Container>
+        <div className="header-moreMovie">
+          <div className="content-moreMovie">
+            <p> {sectionTitle}</p>
+            <HiArrowSmallRight
+              onClick={handelIsBack}
+              style={{ cursor: "pointer", fontSize: "28px" }}
+            />
+          </div>
         </div>
-      </div>
 
-      <div className="card">
-        <Container>
+        <div className="card">
           {value.map((el, i) => (
             <Link key={i} to={`/moviePage/${value.id}`}>
               <div className="gridImage">
@@ -53,8 +57,9 @@ export const MoreMovie = () => {
               </div>
             </Link>
           ))}
-        </Container>
-      </div>
+        </div>
+      </Container>
+      <Footer/>
     </div>
   );
 };

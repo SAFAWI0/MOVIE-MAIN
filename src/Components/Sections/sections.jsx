@@ -45,7 +45,7 @@ export const Sections = () => {
         </div>
         <div>
           <div className="content">
-            <Link to={`/moreMovie/المسلسلات المميزة`}>
+            <Link to={`/moreMovie/قصص المميزة`}>
               <span>عرض المزيد</span>
             </Link>
             <p>قصص المميزة</p>
@@ -54,11 +54,7 @@ export const Sections = () => {
         </div>
         <div>
           <div className="content">
-            <Link
-              to={`/moreMovie?sectionTitle=${encodeURIComponent(
-                "المسلسلات المميزة"
-              )}`}
-            >
+          <Link to={`/moreMovie/المسلسلات المميزة`}>
               <span>عرض المزيد</span>
             </Link>
             <p>المسلسلات المميزة</p>

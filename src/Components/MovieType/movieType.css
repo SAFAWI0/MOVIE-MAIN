@@ -1,39 +1,31 @@
 .movieType {
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .movieType .movies-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 10px;
-  margin-bottom: 50px;
+  grid-gap: 10px;
+  max-width: 100%;
+  margin-bottom: 45px;
 }
-
-.movieType .movie-card {
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.movieType .movie-card:hover {
-  border: 1px solid #ffffff;
-}
-
 .movieType .movie-card img {
   width: 100%;
-  height: 200px;
-  border-radius: 8px 8px 0 0;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+.movieType .movie-card img:hover {
+  outline: 1px solid #ffffff;
 }
 
-.movieType .movie-card h3 {
-  margin: 2px 0;
-  font-size: 16px;
-  text-align: center;
-  color: #333;
-}
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 670px) {
   .movieType .movies-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}
+@media screen and (max-width: 360px) {
+  .movieType .movies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   }
 }

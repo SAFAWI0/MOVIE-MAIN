@@ -1,8 +1,10 @@
 .categories .grid-image {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 10px;
-  margin-bottom: 80px;
+  grid-gap: 14px;
+  max-width: 100%;
+  padding: 20px 0;
+  margin-bottom: 40px;
 }
 
 .categories .cat {
@@ -16,11 +18,8 @@
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
-.categories .cat:active .image img {
-  transform: scale(1.1);
-}
-.categories .cat:hover .image img {
-  transform: scale(1.1);
+.categories .image img:hover {
+  outline: 1px solid #ffffff;
 }
 .categories .cat p {
   position: absolute;
@@ -34,16 +33,6 @@
 
 @media screen and (max-width: 805px) {
   .categories .grid-image {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-}
-@media screen and (max-width: 650px) {
-  .categories .grid-image {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-}
-@media screen and (max-width: 341px) {
-  .categories .grid-image {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 }
