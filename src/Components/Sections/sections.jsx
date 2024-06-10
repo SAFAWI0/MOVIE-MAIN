@@ -7,7 +7,7 @@ export const Sections = () => {
   return (
     <div className="sections">
       <Container>
-        <div>
+        <div className="part">
           <div className="content">
             <Link to={`/moreMovie/الباقة الرمضانية 2024`}>
               <span>عرض المزيد</span>
