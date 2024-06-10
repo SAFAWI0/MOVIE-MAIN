@@ -1,6 +1,5 @@
-.header{
+.header {
   background-color: #000000;
-  
 }
 .content {
   display: flex;
@@ -14,7 +13,6 @@
   align-items: center;
   gap: 10px;
   color: #b1afaf;
-  
 }
 .content p {
   font-size: 24px;
@@ -22,3 +20,8 @@
   color: #eee;
 }
 
+@media screen and (max-width: 400px) {
+  .content p {
+    font-size: 20px;
+  }
+}
