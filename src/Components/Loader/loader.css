@@ -1,0 +1,30 @@
+/* loader.css */
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* خلفية شفافة */
+  z-index: 9999; /* للتأكد من أن Loader يكون في الأمام */
+}
+
+.loader-text {
+  font-size: 3rem;
+  color: white;
+  font-weight: bold;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

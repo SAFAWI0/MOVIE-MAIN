@@ -12,7 +12,10 @@ export const Search = () => {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
   const [value, setValue] = useState();
+  const [loading, setLoading] = useState(false);
+
   const getData = () => {
+    setLoading(true);
     var requestOptions = {
       method: "GET",
     };
@@ -23,8 +26,10 @@ export const Search = () => {
       .then((response) => response.json())
       .then((result) => {
         setProducts(result.results);
+        setLoading(false);
       })
       .catch((error) => console.log("error", error));
+      setLoading(false);
   };
   useEffect(() => {
     getData();
@@ -55,7 +60,11 @@ export const Search = () => {
             />
           </button>
         </div>
-
+        {loading && (
+              <div className="loading-indicator">
+                <span className="loader"></span>
+              </div>
+            )}
         <div className="sea-card">
           {products.map((el, i) => (
             <Link to={`/moviePage/${el.id}`} key={i}>

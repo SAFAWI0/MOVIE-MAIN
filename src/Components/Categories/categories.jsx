@@ -56,7 +56,6 @@ export const Categories = () => {
       method: "GET",
     };
 
-    // Fetch genres
     fetch(
       "https://api.themoviedb.org/3/genre/movie/list?api_key=b6434bbf5557a52512008a50a1331ff7",
       requestOptions

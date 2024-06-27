@@ -4,13 +4,16 @@ import Container from "../Container/container";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { HiArrowSmallRight } from "react-icons/hi2";
 import { Footer } from "../Footer/footer";
+import Loader from "../Loader/loader";
 
 export const MoreMovie = () => {
   const [value, setValue] = useState([]);
   const navigate = useNavigate();
   const { sectionTitle } = useParams();
+  const [loading, setLoading] = useState(false);
 
   const getData = () => {
+    setLoading(true);
     const randomNumber = Math.floor(Math.random() * 20) + 1;
     var requestOptions = {
       method: "GET",
@@ -22,8 +25,10 @@ export const MoreMovie = () => {
       .then((response) => response.json())
       .then((result) => {
         setValue(result.results);
+         setLoading(false);
       })
       .catch((error) => console.log("error", error));
+      setLoading(false);
   };
   useEffect(() => {
     getData();
@@ -35,6 +40,9 @@ export const MoreMovie = () => {
 
   return (
     <div className="moreMovie">
+       {loading ? (
+        <Loader />
+      ) : (
       <Container>
         <div className="header-moreMovie">
           <div className="content-moreMovie">
@@ -59,6 +67,7 @@ export const MoreMovie = () => {
           ))}
         </div>
       </Container>
+         )}
       <Footer/>
     </div>
   );

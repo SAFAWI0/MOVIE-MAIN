@@ -19,6 +19,7 @@ import { IoBookmark } from "react-icons/io5";
 import { useAppStore } from "../../store";
 import { Characters } from "../Characters/characters";
 import { LatestComment } from "../Comments/latestComment ";
+import Loader from "../Loader/loader";
 
 export const MoviePage = () => {
   const { id } = useParams();
@@ -28,13 +29,15 @@ export const MoviePage = () => {
   const [isSaved, setIsSaved] = useState(false);
   const { setIsOpenModal, setMoreInf } = useAppStore();
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const getData = () => {
+    setLoading(true);
     var requestOptions = {
       method: "GET",
     };
     fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=b6434bbf5557a52512008a50a1331ff7`,
+      `httpss://api.themoviedb.org/3/movie/${id}?api_key=b6434bbf5557a52512008a50a1331ff7`,
       requestOptions
     )
       .then((response) => response.json())
@@ -50,8 +53,10 @@ export const MoviePage = () => {
           revenue: result.revenue,
           image: `https://image.tmdb.org/t/p/w500${result.poster_path}`,
         });
+        setLoading(false);
       })
       .catch((error) => console.log("error", error));
+    setLoading(false);
   };
   useEffect(() => {
     getData();
@@ -91,154 +96,171 @@ export const MoviePage = () => {
 
   return (
     <div className="categoriesPage">
-      {value && (
-        <div className="content-cat">
-          <div className="image-cover">
-            <img
-              src={`https://image.tmdb.org/t/p/w500${value.poster_path}`}
-              alt={value.title}
-            ></img>
-
-            <div className="header">
-              <div className="content">
-                <IoMdArrowBack className="icon-head" onClick={handelIsBack} />
-                {isSaved ? (
-                  <IoBookmark className="icon-head" onClick={handelIsSave} />
-                ) : (
-                  <CiBookmark className="icon-head" onClick={handelNotSave} />
-                )}
-              </div>
-            </div>
-          </div>
-
-          <div className="Cover">
-            <div className="inCover">
-              <div className="image">
+      {loading ? (
+        <Loader />
+      ) : (
+        <div>
+          {value && (
+            <div className="content-cat">
+              <div className="image-cover">
                 <img
                   src={`https://image.tmdb.org/t/p/w500${value.poster_path}`}
                   alt={value.title}
                 ></img>
+
+                <div className="header">
+                  <div className="content">
+                    <IoMdArrowBack
+                      className="icon-head"
+                      onClick={handelIsBack}
+                    />
+                    {isSaved ? (
+                      <IoBookmark
+                        className="icon-head"
+                        onClick={handelIsSave}
+                      />
+                    ) : (
+                      <CiBookmark
+                        className="icon-head"
+                        onClick={handelNotSave}
+                      />
+                    )}
+                  </div>
+                </div>
               </div>
-              <div className="information">
-                <div className="title">
-                  <h3>{value.title}</h3>
-                </div>
 
-                <div className="content-line">
-                  <div className="star">
-                    <span>IMDb:</span>
-                    <p>
-                      {value.vote_average !== undefined
-                        ? value.vote_average.toFixed(1)
-                        : 0}
-                    </p>
-                    <FaStar style={{ color: "gold", marginBottom: "4px" }} />
+              <div className="Cover">
+                <div className="inCover">
+                  <div className="image">
+                    <img
+                      src={`https://image.tmdb.org/t/p/w500${value.poster_path}`}
+                      alt={value.title}
+                    ></img>
                   </div>
-                  <div className="date">
-                    <span>
-                      {value.release_date
-                        ? value.release_date.substring(0, 4)
-                        : ""}
-                    </span>
-                  </div>
-                  <div className="family">
-                    <FaUsers className="icon-family" />
-                  </div>
-                  <div className="view">
-                    <IoEyeOutline className="icon-family" />
-                    <p>
-                      {value.vote_count
-                        ? value.vote_count.toLocaleString()
-                        : ""}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="type">
-                  {value.genres &&
-                    value.genres.map((el, i) => (
-                      <span key={i}>
-                        {el.name}
-                        {i !== value.genres.length - 1 && " | "}
-                      </span>
-                    ))}
-                </div>
-
-                <div className="overview">
-                  <span>
-                    {value.overview &&
-                      (isExpanded || value.overview.length < 100
-                        ? value.overview
-                        : value.overview.substring(0, 100) + "... ")}
-                  </span>
-                  {value.overview && value.overview.length > 100 && (
-                    <button onClick={toggleExpansion}>
-                      {isExpanded ? "Show Less" : "Show More"}
-                    </button>
-                  )}
-                </div>
-
-                <div className="content-line-2">
-                  <div className="butt-play">
-                    <button> Play Now</button>
-                    <FaPlay className="icon-play" />
-                  </div>
-
-                  <div className="eva-view">
-                    <div className="like" onClick={handleonclick}>
-                      <GrDislike className="icon-like" />
-                      <p>
-                        {value.vote_average !== undefined
-                          ? value.vote_average.toFixed(0)
-                          : 0}
-                      </p>
+                  <div className="information">
+                    <div className="title">
+                      <h3>{value.title}</h3>
                     </div>
 
-                    <div className="like" onClick={handleonclick}>
-                      <GrLike className="icon-like" />
-                      <p>{value.vote_count}</p>
-                    </div>
-
-                    <div className="like" onClick={handleonclick}>
-                      <FaRegHeart className="icons" />
-                    </div>
-                    <Link to="https://www.youtube.com/">
-                      <div className="like">
-                        <AiOutlineYoutube className="icons" />
+                    <div className="content-line">
+                      <div className="star">
+                        <span>IMDb:</span>
+                        <p>
+                          {value.vote_average !== undefined
+                            ? value.vote_average.toFixed(1)
+                            : 0}
+                        </p>
+                        <FaStar
+                          style={{ color: "gold", marginBottom: "4px" }}
+                        />
                       </div>
-                    </Link>
+                      <div className="date">
+                        <span>
+                          {value.release_date
+                            ? value.release_date.substring(0, 4)
+                            : ""}
+                        </span>
+                      </div>
+                      <div className="family">
+                        <FaUsers className="icon-family" />
+                      </div>
+                      <div className="view">
+                        <IoEyeOutline className="icon-family" />
+                        <p>
+                          {value.vote_count
+                            ? value.vote_count.toLocaleString()
+                            : ""}
+                        </p>
+                      </div>
+                    </div>
 
-                    <div className="like" onClick={handleOpenModal}>
-                      <TbExclamationMark className="icons" />
+                    <div className="type">
+                      {value.genres &&
+                        value.genres.map((el, i) => (
+                          <span key={i}>
+                            {el.name}
+                            {i !== value.genres.length - 1 && " | "}
+                          </span>
+                        ))}
+                    </div>
+
+                    <div className="overview">
+                      <span>
+                        {value.overview &&
+                          (isExpanded || value.overview.length < 100
+                            ? value.overview
+                            : value.overview.substring(0, 100) + "... ")}
+                      </span>
+                      {value.overview && value.overview.length > 100 && (
+                        <button onClick={toggleExpansion}>
+                          {isExpanded ? "Show Less" : "Show More"}
+                        </button>
+                      )}
+                    </div>
+
+                    <div className="content-line-2">
+                      <div className="butt-play">
+                        <button> Play Now</button>
+                        <FaPlay className="icon-play" />
+                      </div>
+
+                      <div className="eva-view">
+                        <div className="like" onClick={handleonclick}>
+                          <GrDislike className="icon-like" />
+                          <p>
+                            {value.vote_average !== undefined
+                              ? value.vote_average.toFixed(0)
+                              : 0}
+                          </p>
+                        </div>
+
+                        <div className="like" onClick={handleonclick}>
+                          <GrLike className="icon-like" />
+                          <p>{value.vote_count}</p>
+                        </div>
+
+                        <div className="like" onClick={handleonclick}>
+                          <FaRegHeart className="icons" />
+                        </div>
+                        <Link to="https://www.youtube.com/">
+                          <div className="like">
+                            <AiOutlineYoutube className="icons" />
+                          </div>
+                        </Link>
+
+                        <div className="like" onClick={handleOpenModal}>
+                          <TbExclamationMark className="icons" />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
+
+                <Characters />
+
+                <div className="comments">
+                  <h3>تعليقات</h3>
+                  <LatestComment />
+                  <Link to={`/moviePage/${id}/comment`}>
+                    <div className="more-comment" onClick={handleIsOpen}>
+                      <button>عرض الكل</button>
+                    </div>
+                  </Link>
+                </div>
+
+                <div className="line" />
+
+                <div className="more-movie">
+                  <h3>افلام مشابهة</h3>
+                  <Card />
+                </div>
               </div>
             </div>
-
-            <Characters />
-
-            <div className="comments">
-              <h3>تعليقات</h3>
-              <LatestComment />
-              <Link to={`/moviePage/${id}/comment`}>
-                <div className="more-comment" onClick={handleIsOpen}>
-                  <button>عرض الكل</button>
-                </div>
-              </Link>
-            </div>
-
-            <div className="line" />
-
-            <div className="more-movie">
-              <h3>افلام مشابهة</h3>
-              <Card />
-            </div>
-          </div>
+          )}
+          {contextHolder}
         </div>
       )}
       <Footer />
-      {contextHolder}
     </div>
   );
 };

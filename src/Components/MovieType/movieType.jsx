@@ -5,13 +5,16 @@ import Container from "../Container/container";
 import { Footer } from "../Footer/footer";
 import Header from "../Header/header";
 import { useAppStore } from "../../store";
+import Loader from "../Loader/loader";
 
 export const MovieType = () => {
   const { genre } = useParams();
   const [value, setValue] = useState([]);
   const { nameType } = useAppStore();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     const fetchMovies = async () => {
       try {
         const options = {
@@ -25,8 +28,10 @@ export const MovieType = () => {
         );
         const movieData = await movieResponse.json();
         setValue(movieData.results);
+        setLoading(false);
       } catch (error) {
         console.log("error", error);
+        setLoading(false);
       }
     };
 
@@ -38,6 +43,9 @@ export const MovieType = () => {
       <Header title={` ${nameType.genre} :قسم`} />
 
       <div className="movieType">
+      {loading ? (
+        <Loader />
+      ) : (
         <Container>
           <div className="movies-grid">
             {value.map((movie, i) => (
@@ -52,6 +60,7 @@ export const MovieType = () => {
             ))}
           </div>
         </Container>
+         )}
       </div>
       <Footer />
     </div>

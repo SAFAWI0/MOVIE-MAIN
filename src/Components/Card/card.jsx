@@ -1,11 +1,14 @@
 import "./card.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Loader from "../Loader/loader";
 
 export const Card = () => {
   const [value, setValue] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const getData = () => {
+    setLoading(true);
     const randomNumber = Math.floor(Math.random() * 20) + 1;
     var requestOptions = {
       method: "GET",
@@ -17,8 +20,10 @@ export const Card = () => {
       .then((response) => response.json())
       .then((result) => {
         setValue(result.results);
+        setLoading(false);
       })
       .catch((error) => console.log("error", error));
+    setLoading(false);
   };
   useEffect(() => {
     getData();
@@ -30,23 +35,27 @@ export const Card = () => {
 
   return (
     <div className="card">
-      <ul>
-        {value.map((el, i) => (
-          <li key={i}>
-            <Link to={`/moviePage/${el.id}`}>
-              <div className="grid" onClick={handelUp}>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
-                  alt="not found"
-                />
-                <div className="title">
-                  <p>{el.title}</p>
+      {loading ? (
+        <Loader />
+      ) : (
+        <ul>
+          {value.map((el, i) => (
+            <li key={i}>
+              <Link to={`/moviePage/${el.id}`}>
+                <div className="grid" onClick={handelUp}>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
+                    alt="not found"
+                  />
+                  <div className="title">
+                    <p>{el.title}</p>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          </li>
-        ))}
-      </ul>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

@@ -19,9 +19,8 @@ const BannerSlider = () => {
     autoplay: true,
     autoplaySpeed: 5000,
     arrows: false,
-    
-    
   };
+
   return (
     <div>
       <Container>

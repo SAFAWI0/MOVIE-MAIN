@@ -1,183 +1,25 @@
-<div className="categoriesPage">
-      {value && (
-        <div className="content-cat">
+import "./categoriesName.css";
+import { useAppStore } from "../../store";
+import Container from "../Container/container";
+import { Link } from "react-router-dom";
 
+export const CategoriesName = () => {
+  const { genresList,setNameType } = useAppStore();
 
-          <div className="image">
-            <img
-              src={`https://image.tmdb.org/t/p/w500${value.poster_path}`}
-              alt={value.title}
-            ></img>
-          </div>
-
-          
-          <div className="star">
-            <FaStar style={{ color: "gold", marginBottom: "4px" }} />
-            <p>
-              {value.vote_average !== undefined
-                ? value.vote_average.toFixed(1)
-                : 0}
-            </p>
-          </div>
-          <div className="title">
-            <h3>{value.title}</h3>
-          </div>
-
-
-          <Link to="https://www.youtube.com/">
-            <div className="watch">
-              <p>مشاهدة الاعلان</p>
-              <CiYoutube className="icon" />
-            </div>
-          </Link>
-
-
-          <div className="overview">
-            <span>{value.overview}</span>
-          </div>
-
-          
-          <div className="eva">
-            <div className="like" onClick={handleonclick}>
-              <GrDislike />
-              <p>
-                {value.vote_average !== undefined
-                  ? value.vote_average.toFixed(0)
-                  : 0}
-              </p>
-            </div>
-            <div className="like" onClick={handleonclick}>
-              <GrLike />
-              <p>{value.vote_count}</p>
-            </div>
-          </div>
-          <div className="deta-mov">
-            
-            <div className="details">
-              <p>{Number(value.budget).toLocaleString("en")}</p>
-              <span>: الميزانية</span>
-            </div>
-            <div className="details">
-              <p>{value.runtime} m.</p>
-              <span>: مدة العرض</span>
-            </div>
-          </div>
+  return (
+    <div>
+      <Container>
+        <div className="genre-list">
+          <h2>الانواع </h2>
+          <ul>
+            {genresList.map((genre, index) => (
+               <Link key={index} to={`/movieType/${genre.id}`} onClick={() => setNameType({ genre: genre.name })}>
+              <li >{genre}</li>
+              </Link>
+            ))}
+          </ul>
         </div>
-      )}
-
-      {contextHolder}
+      </Container>
     </div>
-
-
-
-
-
-
-
-
-
-
-    .categoriesPage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.content-cat {
-  width: 600px;
-}
-.categoriesPage .content-cat .image img {
-  height: 500px;
-  width: 100%;
-}
-
-.categoriesPage .content-cat .star {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  gap: 5px;
-  background-color: #8b8b8b;
-  border-radius: 8px;
-  padding: 4px;
-  color: #fff;
-}
-
-.categoriesPage .content-cat .title {
-  color: #fff;
-  text-align: end;
-}
-.categoriesPage .content-cat .watch {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  border: 1px solid #8b8b8b;
-  background-color: #8b8b8b;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 8px;
-  padding: 4px;
-}
-.categoriesPage .content-cat .watch .icon {
-  color: #fff;
-}
-.categoriesPage .content-cat .overview {
-  font-size: 16px;
-  margin-top: 10px;
-  color: #fff;
-}
-.categoriesPage .content-cat .eva {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  gap: 8px;
-  margin-top: 10px;
-}
-.categoriesPage .content-cat .eva .like {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-  background-color: #8b8b8b;
-  padding: 4px;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-bottom: 10px;
-  font-weight: bold;
-  color: #fff;
-}
-.categoriesPage .content-cat .deta-mov {
-  border: 1px solid #8b8b8b;
-  border-radius: 8px;
-  padding: 4px;
-  background-color: #8b8b8b;
-}
-.categoriesPage .content-cat .deta-mov .details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 4px;
-  margin-top: 4px;
-  border: 1px solid #e4e4e4;
-  border-radius: 8px;
-  padding: 8px;
-}
-.categoriesPage .content-cat .deta-mov .details p {
-  font-weight: bold;
-  color: #fff;
-}
-.categoriesPage .content-cat .deta-mov .details span {
-  font-weight: bold;
-  color: #fff;
-}
-
-@media screen and (max-width: 430px) {
-  .Container {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  .Container {
-    display: none;
-  }
-}
+  );
+};
