@@ -1,5 +1,3 @@
-/* loader.css */
-
 .loader-container {
   position: fixed;
   top: 0;
@@ -9,8 +7,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5); /* خلفية شفافة */
-  z-index: 9999; /* للتأكد من أن Loader يكون في الأمام */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
 }
 
 .loader-text {
@@ -21,7 +19,8 @@
 }
 
 @keyframes blink {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
