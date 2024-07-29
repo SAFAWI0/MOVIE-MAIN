@@ -25,10 +25,11 @@ export const MoreMovie = () => {
       .then((response) => response.json())
       .then((result) => {
         setValue(result.results);
-         setLoading(false);
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
       })
       .catch((error) => console.log("error", error));
-      setLoading(false);
   };
   useEffect(() => {
     getData();
@@ -40,35 +41,35 @@ export const MoreMovie = () => {
 
   return (
     <div className="moreMovie">
-       {loading ? (
+      {loading ? (
         <Loader />
       ) : (
-      <Container>
-        <div className="header-moreMovie">
-          <div className="content-moreMovie">
-            <p> {sectionTitle}</p>
-            <HiArrowSmallRight
-              onClick={handelIsBack}
-              style={{ cursor: "pointer", fontSize: "28px" }}
-            />
+        <Container>
+          <div className="header-moreMovie">
+            <div className="content-moreMovie">
+              <p> {sectionTitle}</p>
+              <HiArrowSmallRight
+                onClick={handelIsBack}
+                style={{ cursor: "pointer", fontSize: "28px" }}
+              />
+            </div>
           </div>
-        </div>
 
-        <div className="card">
-          {value.map((el, i) => (
-            <Link key={i} to={`/moviePage/${value.id}`}>
-              <div className="gridImage">
-                <img
-                  src={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
-                  alt="not found"
-                />
-              </div>
-            </Link>
-          ))}
-        </div>
-      </Container>
-         )}
-      <Footer/>
+          <div className="card">
+            {value.map((el, i) => (
+              <Link key={i} to={`/moviePage/${value.id}`}>
+                <div className="gridImage">
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
+                    alt="not found"
+                  />
+                </div>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      )}
+      <Footer />
     </div>
   );
 };

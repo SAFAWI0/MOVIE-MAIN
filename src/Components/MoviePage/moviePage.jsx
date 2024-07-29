@@ -53,10 +53,11 @@ export const MoviePage = () => {
           revenue: result.revenue,
           image: `https://image.tmdb.org/t/p/w500${result.poster_path}`,
         });
-        setLoading(false);
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
       })
       .catch((error) => console.log("error", error));
-    setLoading(false);
   };
   useEffect(() => {
     getData();

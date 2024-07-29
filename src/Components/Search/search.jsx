@@ -29,11 +29,14 @@ export const Search = () => {
         setLoading(false);
       })
       .catch((error) => console.log("error", error));
-      setLoading(false);
   };
+
   useEffect(() => {
-    getData();
+    if (search) {
+      getData();
+    }
   }, [search]);
+  
 
   const handleInputChange = () => {
     setSearch(value);
@@ -60,11 +63,11 @@ export const Search = () => {
             />
           </button>
         </div>
-        {loading && (
+        {loading ? (
               <div className="loading-indicator">
                 <span className="loader"></span>
               </div>
-            )}
+           ) : (
         <div className="sea-card">
           {products.map((el, i) => (
             <Link to={`/moviePage/${el.id}`} key={i}>
@@ -100,6 +103,7 @@ export const Search = () => {
             </Link>
           ))}
         </div>
+        )}
       </Container>
       <Footer />
     </div>
