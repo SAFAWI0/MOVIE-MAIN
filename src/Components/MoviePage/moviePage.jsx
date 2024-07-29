@@ -37,7 +37,7 @@ export const MoviePage = () => {
       method: "GET",
     };
     fetch(
-      `httpss://api.themoviedb.org/3/movie/${id}?api_key=b6434bbf5557a52512008a50a1331ff7`,
+      `https://api.themoviedb.org/3/movie/${id}?api_key=b6434bbf5557a52512008a50a1331ff7`,
       requestOptions
     )
       .then((response) => response.json())
@@ -93,7 +93,6 @@ export const MoviePage = () => {
   const handleOpenModal = () => {
     setIsOpenModal(true);
   };
-
   return (
     <div className="categoriesPage">
       {loading ? (
